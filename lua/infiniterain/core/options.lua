@@ -39,8 +39,15 @@ opt.iskeyword:append("-")
 
 -- auto-reload files when modified externally
 -- https://unix.stackexchange.com/a/383044
-vim.o.autoread = true
-vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-	command = "if mode() != 'c' | checktime | endif",
-	pattern = { "*" },
-})
+opt.autoread = true
+vim.cmd([[
+  autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+  autocmd FileChangedShellPost *
+    \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+]])
+
+-- go back into insert mode on lost focus
+vim.cmd('autocmd FocusLost * call feedkeys("\\<esc>")')
+
+-- save on focus lost
+vim.cmd("autocmd FocusLost * nested silent! wall")
