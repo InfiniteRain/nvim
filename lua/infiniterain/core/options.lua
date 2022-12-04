@@ -51,3 +51,6 @@ vim.cmd('autocmd FocusLost * call feedkeys("\\<esc>")')
 
 -- save on focus lost
 vim.cmd("autocmd FocusLost * nested silent! wall")
+
+-- color column
+opt.colorcolumn = "80"
