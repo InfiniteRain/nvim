@@ -23,7 +23,7 @@ lualine_nightfly.command = {
 		fg = colors.black,
 	},
 }
-print("a")
+
 lualine.setup({
 	options = {
 		theme = lualine_nightfly,
