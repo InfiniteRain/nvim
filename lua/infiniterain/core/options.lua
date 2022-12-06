@@ -49,8 +49,10 @@ vim.cmd([[
 -- go back into insert mode on lost focus
 vim.cmd('autocmd FocusLost * call feedkeys("\\<esc>")')
 
--- save on focus lost
-vim.cmd("autocmd FocusLost * nested silent! wall")
+-- save on focus lost & buf enter
+vim.cmd([[
+  autocmd FocusLost,BufEnter * nested silent! wall
+]])
 
 -- color column
 opt.colorcolumn = "80"
