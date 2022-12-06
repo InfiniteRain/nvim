@@ -34,6 +34,10 @@ keymap.set("n", "<leader>se", "<C-w>=")
 -- close current split window
 keymap.set("n", "<leader>sx", ":close<CR>")
 
+-- remap ctrl+u & ctrl+d to also recenter the viewport
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
+
 ---
 -- Plugin keymaps
 ---
