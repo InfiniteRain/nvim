@@ -103,6 +103,11 @@ return packer.startup(function(use)
 	-- gitsigns
 	use("lewis6991/gitsigns.nvim")
 
+	-- neotest
+	use("antoinemadec/FixCursorHold.nvim")
+	use("haydenmeade/neotest-jest")
+	use("nvim-neotest/neotest")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
