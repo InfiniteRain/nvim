@@ -33,4 +33,15 @@ nvim_tree.setup({
 			},
 		},
 	},
+
+	-- don't hide file prefixed with a dot
+	filters = {
+		dotfiles = false,
+		custom = { "^.git$", "^.DS_Store$" },
+	},
+
+	-- don't hide files in .gitignorej
+	git = {
+		ignore = false,
+	},
 })
