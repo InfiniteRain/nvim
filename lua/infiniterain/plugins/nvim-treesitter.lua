@@ -25,6 +25,8 @@ treesitter.setup({
 		"vim",
 		"dockerfile",
 		"gitignore",
+		"markdown",
+		"markdown_inline",
 	},
 	auto_install = true,
 })
