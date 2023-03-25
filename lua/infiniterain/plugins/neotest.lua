@@ -49,6 +49,25 @@ function find_jest_config_directory(path)
 	return false
 end
 
+local map_opts = { noremap = true, silent = true, nowait = true }
+
+vim.keymap.set("n", "<leader>tf", function()
+	neotest.run.run(vim.fn.expand("%"))
+	neotest.summary.open()
+end)
+
+vim.keymap.set("n", "<leader>tr", function()
+	neotest.run.run()
+end)
+
+vim.keymap.set("n", "<leader>ts", function()
+	neotest.summary.toggle()
+end)
+
+vim.keymap.set("n", "<leader>to", function()
+	neotest.output.open({ enter = true })
+end)
+
 neotest.setup({
 	adapters = {
 		neotest_jest({
@@ -62,5 +81,9 @@ neotest.setup({
 				return vim.fn.getcwd()
 			end,
 		}),
+	},
+	quickfix = {
+		open = false,
+		enabled = false,
 	},
 })
