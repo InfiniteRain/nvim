@@ -56,3 +56,8 @@ vim.cmd([[
 
 -- color column
 opt.colorcolumn = "80"
+
+-- sort diagnostics by severity (errors will appear first)
+vim.diagnostic.config({
+	severity_sort = true,
+})
