@@ -52,21 +52,25 @@ end
 local map_opts = { noremap = true, silent = true, nowait = true }
 
 vim.keymap.set("n", "<leader>tf", function()
+	vim.cmd("wall")
 	neotest.run.run(vim.fn.expand("%"))
 	neotest.summary.open()
-end)
+end, map_opts)
 
 vim.keymap.set("n", "<leader>tr", function()
+	vim.cmd("wall")
 	neotest.run.run()
-end)
+end, map_opts)
 
 vim.keymap.set("n", "<leader>ts", function()
+	vim.cmd("wall")
 	neotest.summary.toggle()
-end)
+end, map_opts)
 
 vim.keymap.set("n", "<leader>to", function()
+	vim.cmd("wall")
 	neotest.output.open({ enter = true })
-end)
+end, map_opts)
 
 neotest.setup({
 	adapters = {
