@@ -21,8 +21,9 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"tailwindcss",
-    "lua_ls",
+		"lua_ls",
 		"emmet_ls",
+		"rust_analyzer",
 	},
 })
 
@@ -31,5 +32,6 @@ mason_null_ls.setup({
 		"prettier",
 		"stylua",
 		"eslint_d",
+		"rustfmt",
 	},
 })
