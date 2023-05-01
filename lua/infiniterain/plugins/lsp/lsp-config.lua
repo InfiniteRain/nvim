@@ -103,4 +103,19 @@ lspconfig["lua_ls"].setup({
 lspconfig["rust_analyzer"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = {
+				allFeatures = true,
+				overrideCommand = {
+					"cargo",
+					"clippy",
+					"--workspace",
+					"--message-format=json",
+					"--all-targets",
+					"--all-features",
+				},
+			},
+		},
+	},
 })
