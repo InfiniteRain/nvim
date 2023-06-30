@@ -24,6 +24,7 @@ mason_lspconfig.setup({
 		"lua_ls",
 		"emmet_ls",
 		"rust_analyzer",
+		"denols",
 	},
 })
 

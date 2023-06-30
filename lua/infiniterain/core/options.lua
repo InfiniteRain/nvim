@@ -61,3 +61,8 @@ opt.colorcolumn = "80"
 vim.diagnostic.config({
 	severity_sort = true,
 })
+
+-- appropriately highlight codefences returned from denols
+vim.g.markdown_fenced_languages = {
+	"ts=typescript",
+}

@@ -8,8 +8,8 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
+local typescript_status, typescript = pcall(require, "typescript")
+if not typescript_status then
 	return
 end
 
@@ -61,6 +61,8 @@ typescript.setup({
 	server = {
 		capabilities = capabilities,
 		on_attach = on_attach,
+		root_dir = lspconfig.util.root_pattern("package.json"),
+		single_file_support = false,
 	},
 })
 
@@ -118,4 +120,10 @@ lspconfig["rust_analyzer"].setup({
 			},
 		},
 	},
+})
+
+lspconfig["denols"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 })
