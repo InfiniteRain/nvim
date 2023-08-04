@@ -45,8 +45,8 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 -- maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
--- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+-- neo-tree
+keymap.set("n", "<leader>e", ":Neotree toggle<cr>")
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")

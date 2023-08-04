@@ -50,7 +50,9 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim")
 
 	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+	use("nvim-tree/nvim-web-devicons")
+	use("MunifTanjim/nui.nvim")
+	use({ "nvim-neo-tree/neo-tree.nvim", branch = "v3.x" })
 
 	-- icons
 	use("kyazdani42/nvim-web-devicons")
