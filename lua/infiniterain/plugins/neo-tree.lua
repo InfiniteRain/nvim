@@ -6,7 +6,7 @@ end
 neo_tree.setup({
 	default_component_configs = {
 		indent = {
-			with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+			with_expanders = true,
 			expander_collapsed = "",
 			expander_expanded = "",
 			expander_highlight = "NeoTreeExpander",
@@ -24,3 +24,6 @@ neo_tree.setup({
 		},
 	},
 })
+
+-- color of the title bars that appear on floating windows
+vim.cmd("highlight NeoTreeTitleBar guifg=#FFFFFF")
