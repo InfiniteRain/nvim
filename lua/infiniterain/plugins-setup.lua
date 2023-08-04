@@ -110,6 +110,11 @@ return packer.startup(function(use)
 	use("haydenmeade/neotest-jest")
 	use("nvim-neotest/neotest")
 
+	-- noice
+	use("MunifTanjim/nui.nvim")
+	use("rcarriga/nvim-notify")
+	use("folke/noice.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
