@@ -1,6 +1,3 @@
-local setup, noice = pcall(require, "noice")
-if not setup then
-	return
-end
-
-noice.setup()
+require("infiniterain.core.util").safe_require("noice", function(noice)
+	noice.setup()
+end)

@@ -1,6 +1,3 @@
-local setup, comment = pcall(require, "Comment")
-if not setup then
-	return
-end
-
-comment.setup()
+require("infiniterain.core.util").safe_require("Comment", function(comment)
+	comment.setup()
+end)
