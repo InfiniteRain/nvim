@@ -1,5 +1,10 @@
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if not status then
+local status_treesitter, treesitter = pcall(require, "nvim-treesitter.configs")
+if not status_treesitter then
+	return
+end
+
+local status_context, context = pcall(require, "treesitter-context")
+if not status_context then
 	return
 end
 
@@ -30,3 +35,5 @@ treesitter.setup({
 	},
 	auto_install = true,
 })
+
+context.setup({})

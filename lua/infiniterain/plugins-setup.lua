@@ -54,9 +54,6 @@ return packer.startup(function(use)
 	use("MunifTanjim/nui.nvim")
 	use({ "nvim-neo-tree/neo-tree.nvim", branch = "v3.x" })
 
-	-- icons
-	use("kyazdani42/nvim-web-devicons")
-
 	-- status line
 	use("nvim-lualine/lualine.nvim")
 
@@ -97,6 +94,7 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- auto closing
 	use("windwp/nvim-autopairs")
@@ -111,7 +109,6 @@ return packer.startup(function(use)
 	use("nvim-neotest/neotest")
 
 	-- noice
-	use("MunifTanjim/nui.nvim")
 	use("rcarriga/nvim-notify")
 	use("folke/noice.nvim")
 
