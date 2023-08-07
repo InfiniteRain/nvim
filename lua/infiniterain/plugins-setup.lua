@@ -112,6 +112,9 @@ return packer.startup(function(use)
 	use("rcarriga/nvim-notify")
 	use("folke/noice.nvim")
 
+	-- lazygit
+	use("kdheepak/lazygit.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

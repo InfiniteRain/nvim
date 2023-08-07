@@ -5,17 +5,26 @@ The neovim configuration that I use. Heavily inspired by Josean Martinez's
 
 ## Mac OS pre-requisites
 
-1. Install the following 
-[font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf)
-and use it in your terminal.
+1. Install the following
+   [font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf)
+   and use it in your terminal.
 2. Make sure that Node is installed
 3. Install ripgrep: `brew install ripgrep`
+4. Install lazygit: `brew install lazygit`
+5. Install git-delta: `brew install git-delta`
+6. Add the following into `~/Library/Application\ Support/lazygit/config.yml`:
+   ```yml
+   git:
+     paging:
+       colorArg: always
+       pager: delta --dark --paging=never
+   ```
 
 ## Ubuntu pre-requisites
 
-1. Install the following 
-[font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf)
-and use it in your terminal.
+1. Install the following
+   [font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Meslo/M/Regular/complete/Meslo%20LG%20M%20Regular%20Nerd%20Font%20Complete.ttf)
+   and use it in your terminal.
 2. Make sure that Node is installed
 3. Make sure that `build-essential` is installed: `sudo apt-get install build-essential`
 4. Make sure that `unzip` is installed: `sudo apt-get install unzip`
