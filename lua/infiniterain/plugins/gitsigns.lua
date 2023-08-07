@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("gitsigns", function(gitsigns)
+require("infiniterain.util").safe_require("gitsigns", function(gitsigns)
 	gitsigns.setup({
 		signs = {
 			add = { text = "▎" },

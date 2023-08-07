@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require(
+require("infiniterain.util").safe_require(
 	"mason",
 	"mason-lspconfig",
 	"mason-null-ls",

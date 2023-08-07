@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("lualine", "lualine.themes.nord", function(lualine, nord_theme)
+require("infiniterain.util").safe_require("lualine", "lualine.themes.nord", function(lualine, nord_theme)
 	local colors = {
 		blue = "#65D1FF",
 		green = "#3EFFDC",

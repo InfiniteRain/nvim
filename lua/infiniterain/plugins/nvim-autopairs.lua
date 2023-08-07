@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("nvim-autopairs", function(nvim_autopairs)
+require("infiniterain.util").safe_require("nvim-autopairs", function(nvim_autopairs)
 	nvim_autopairs.setup({
 		check_ts = true,
 		ts_config = {

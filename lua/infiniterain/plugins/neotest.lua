@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("neotest", "neotest-jest", function(neotest, neotest_jest)
+require("infiniterain.util").safe_require("neotest", "neotest-jest", function(neotest, neotest_jest)
 	local function is_jest_config(filename)
 		local check_table = {
 			["jest.config.js"] = true,

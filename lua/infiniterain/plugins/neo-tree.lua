@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("neo-tree", function(neo_tree)
+require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
 	neo_tree.setup({
 		default_component_configs = {
 			indent = {

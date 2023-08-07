@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("telescope", "telescope.actions", function(telescope, actions)
+require("infiniterain.util").safe_require("telescope", "telescope.actions", function(telescope, actions)
 	telescope.setup({
 		defaults = {
 			mappings = {

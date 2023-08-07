@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("cmp", "luasnip", "lspkind", function(cmp, luasnip, lspkind)
+require("infiniterain.util").safe_require("cmp", "luasnip", "lspkind", function(cmp, luasnip, lspkind)
 	-- load friendly-snippets
 	require("luasnip/loaders/from_vscode").lazy_load()
 

@@ -1,4 +1,4 @@
-require("infiniterain.core.util").safe_require("null-ls", function(null_ls)
+require("infiniterain.util").safe_require("null-ls", function(null_ls)
 	local formatting = null_ls.builtins.formatting
 	local diagnostics = null_ls.builtins.diagnostics
 
