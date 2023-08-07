@@ -68,7 +68,15 @@ local function safe_require(...)
 	callback(table.unpack(required_packages))
 end
 
+local function safe_vim_cmd(cmd, error_callback)
+	local status, _ = pcall(vim.cmd, cmd)
+	if not status then
+		error_callback()
+	end
+end
+
 return {
-	safe_require = safe_require,
 	recursive_require = recursive_require,
+	safe_require = safe_require,
+	safe_vim_cmd = safe_vim_cmd,
 }

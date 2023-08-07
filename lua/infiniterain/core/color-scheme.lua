@@ -1,5 +1,3 @@
-local status, _ = pcall(vim.cmd, "colorscheme nord")
-if not status then
+require("infiniterain.core.util").safe_vim_cmd("colorscheme nord", function()
 	print("Color scheme not found!")
-	return
-end
+end)
