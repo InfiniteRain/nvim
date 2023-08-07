@@ -1,3 +1,4 @@
+---@diagnostic disable-next-line: deprecated
 table.unpack = table.unpack or unpack
 
 local function recursive_require(path)
@@ -69,6 +70,7 @@ local function safe_require(...)
 end
 
 local function safe_vim_cmd(cmd, error_callback)
+	---@diagnostic disable-next-line: param-type-mismatch
 	local status, _ = pcall(vim.cmd, cmd)
 	if not status then
 		error_callback()
