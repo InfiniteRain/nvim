@@ -28,4 +28,6 @@ require("infiniterain.util").safe_require("nvim-treesitter.configs", "treesitter
 	})
 
 	context.setup({})
+
+	vim.cmd("highlight TreesitterContext guibg=#434c5e")
 end)
