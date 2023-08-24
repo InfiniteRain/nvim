@@ -108,10 +108,6 @@ return packer.startup(function(use)
 	use("haydenmeade/neotest-jest")
 	use("nvim-neotest/neotest")
 
-	-- noice
-	use("rcarriga/nvim-notify")
-	use("folke/noice.nvim")
-
 	-- lazygit
 	use("kdheepak/lazygit.nvim")
 
