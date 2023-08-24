@@ -117,5 +117,20 @@ require("infiniterain.util").safe_require(
 			on_attach = on_attach,
 			root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 		})
+
+		lspconfig["ocamllsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "ocamllsp" },
+			filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+			root_dir = lspconfig.util.root_pattern(
+				"*.opam",
+				"esy.json",
+				"package.json",
+				".git",
+				"dune-project",
+				"dune-workspace"
+			),
+		})
 	end
 )

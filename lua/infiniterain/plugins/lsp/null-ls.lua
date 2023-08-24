@@ -34,6 +34,7 @@ require("infiniterain.util").safe_require("null-ls", function(null_ls)
 					return { "--edition=2021" }
 				end,
 			}),
+			formatting.ocamlformat,
 		},
 
 		-- configure format on save
