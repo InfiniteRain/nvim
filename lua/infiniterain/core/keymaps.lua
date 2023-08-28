@@ -58,3 +58,11 @@ keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>")
 
 -- lazygit
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+
+-- harpoon
+keymap.set("n", "<leader>hh", ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
+keymap.set("n", "<leader>ha", ':lua require("harpoon.mark").add_file()<cr>')
+keymap.set("n", "<leader>hd", ':lua require("harpoon.mark").rm_file()<cr>')
+for i = 1, 9 do
+	keymap.set("n", "<leader>" .. i, ':lua require("harpoon.ui").nav_file(' .. i .. ")<cr>")
+end
