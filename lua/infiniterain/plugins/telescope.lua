@@ -20,6 +20,9 @@ require("infiniterain.util").safe_require("telescope", "telescope.actions", func
 			find_files = {
 				hidden = true,
 			},
+			oldfiles = {
+				cwd_only = true,
+			},
 		},
 	})
 
