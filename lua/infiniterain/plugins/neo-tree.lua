@@ -10,6 +10,9 @@ require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
 			},
 		},
 		filesystem = {
+			bind_to_cwd = false,
+			follow_current_file = { enabled = true },
+			use_libuv_file_watcher = true,
 			filtered_items = {
 				visible = true,
 				hide_dotfiles = false,
@@ -17,6 +20,15 @@ require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
 				hide_hidden = false,
 				never_show = {
 					".DS_Store",
+				},
+			},
+			window = {
+				mappings = {
+					["z"] = "none",
+				},
+				fuzzy_finder_mappings = {
+					["<C-j>"] = "move_cursor_down",
+					["<C-k>"] = "move_cursor_up",
 				},
 			},
 		},
