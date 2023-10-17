@@ -47,7 +47,8 @@ return packer.startup(function(use)
 	use("vim-scripts/ReplaceWithRegister")
 
 	-- commenting
-	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("echasnovski/mini.comment")
 
 	-- file explorer
 	use("nvim-tree/nvim-web-devicons")
