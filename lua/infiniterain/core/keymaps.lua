@@ -49,12 +49,10 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 keymap.set("n", "<leader>e", ":Neotree toggle<cr>")
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>")
+keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files({ path_display = { 'truncate' } })<cr>")
+keymap.set("n", "<leader>fs", ":lua require('telescope.builtin').live_grep({ path_display = { 'truncate' } })<cr>")
+keymap.set("n", "<leader>fc", ":lua require('telescope.builtin').grep_string({ path_display = { 'truncate' } })<cr>")
+keymap.set("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles({ path_display = { 'truncate' } })<cr>")
 
 -- lazygit
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
