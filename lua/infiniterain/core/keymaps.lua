@@ -58,9 +58,9 @@ keymap.set("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles({ path
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 -- harpoon
-keymap.set("n", "<leader>hh", ':lua require("harpoon.ui").toggle_quick_menu()<cr>')
-keymap.set("n", "<leader>ha", ':lua require("harpoon.mark").add_file()<cr>')
-keymap.set("n", "<leader>hd", ':lua require("harpoon.mark").rm_file()<cr>')
+keymap.set("n", "<leader>hh", ':lua require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())<cr>')
+keymap.set("n", "<leader>ha", ':lua require("harpoon"):list():append()<cr>')
+keymap.set("n", "<leader>hd", ':lua require("harpoon"):list():remove()<cr>')
 for i = 1, 9 do
-	keymap.set("n", "<leader>" .. i, ':lua require("harpoon.ui").nav_file(' .. i .. ")<cr>")
+	keymap.set("n", "<leader>" .. i, ':lua require("harpoon"):list():select(' .. i .. ")<cr>")
 end

@@ -113,7 +113,7 @@ return packer.startup(function(use)
 	use("kdheepak/lazygit.nvim")
 
 	-- harpoon
-	use("ThePrimeagen/harpoon")
+	use({ "ThePrimeagen/harpoon", branch = "harpoon2" })
 
 	if packer_bootstrap then
 		require("packer").sync()
