@@ -35,6 +35,7 @@ require("infiniterain.util").safe_require("null-ls", function(null_ls)
 				end,
 			}),
 			formatting.ocamlformat,
+			formatting.csharpier,
 		},
 
 		-- configure format on save

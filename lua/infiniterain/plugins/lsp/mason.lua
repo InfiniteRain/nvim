@@ -16,6 +16,7 @@ require("infiniterain.util").safe_require(
 				"rust_analyzer",
 				"denols",
 				"ocamllsp",
+				"omnisharp",
 			},
 		})
 
@@ -26,6 +27,7 @@ require("infiniterain.util").safe_require(
 				"eslint_d",
 				"rustfmt",
 				"ocamlformat",
+				"csharpier",
 			},
 		})
 	end

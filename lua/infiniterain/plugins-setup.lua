@@ -115,6 +115,9 @@ return packer.startup(function(use)
 	-- harpoon
 	use({ "ThePrimeagen/harpoon", branch = "harpoon2" })
 
+	-- omnisharp extended
+	use("Hoffs/omnisharp-extended-lsp.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
