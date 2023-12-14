@@ -148,5 +148,10 @@ require("infiniterain.util").safe_require(
 			sdk_include_prereleases = true,
 			analyze_open_documents_only = true,
 		})
+
+		lspconfig["gdscript"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 	end
 )

@@ -28,6 +28,7 @@ require("infiniterain.util").safe_require(
 				"rustfmt",
 				"ocamlformat",
 				"csharpier",
+				"gdtoolkit",
 			},
 		})
 	end
