@@ -8,7 +8,7 @@ require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
 			},
 		},
 		filesystem = {
-			bind_to_cwd = false,
+			bind_to_cwd = true,
 			follow_current_file = { enabled = true },
 			use_libuv_file_watcher = true,
 			filtered_items = {

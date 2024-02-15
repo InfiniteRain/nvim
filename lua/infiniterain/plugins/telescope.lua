@@ -27,4 +27,5 @@ require("infiniterain.util").safe_require("telescope", "telescope.actions", func
 	})
 
 	telescope.load_extension("fzf")
+	telescope.load_extension("monorepo")
 end)

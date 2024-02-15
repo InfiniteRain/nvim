@@ -118,6 +118,9 @@ return packer.startup(function(use)
 	-- omnisharp extended
 	use("Hoffs/omnisharp-extended-lsp.nvim")
 
+	-- monorepo
+	use("imNel/monorepo.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

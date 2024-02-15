@@ -67,3 +67,10 @@ keymap.set("n", "<leader>hd", ':lua require("harpoon"):list():remove()<cr>')
 for i = 1, 9 do
 	keymap.set("n", "<leader>" .. i, ':lua require("harpoon"):list():select(' .. i .. ")<cr>")
 end
+
+-- monorepo
+keymap.set("n", "<leader>mm", ':lua require("telescope").extensions.monorepo.monorepo()<cr>')
+keymap.set("n", "<leader>mt", ':lua require("monorepo").toggle_project()<cr>')
+for i = 1, 9 do
+	keymap.set("n", "<leader>m" .. i, ':lua require("monorepo").go_to_project(' .. i .. ")<cr>")
+end
