@@ -66,3 +66,6 @@ vim.diagnostic.config({
 vim.g.markdown_fenced_languages = {
 	"ts=typescript",
 }
+
+-- C# tab size
+vim.cmd([[autocmd Filetype cs setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
