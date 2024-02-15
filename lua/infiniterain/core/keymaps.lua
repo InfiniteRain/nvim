@@ -13,8 +13,11 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- save file
 keymap.set("n", "<leader>w", ":w<CR>")
 
--- clear single character
+-- prevent "x" from yanking
 keymap.set("n", "x", '"_x')
+
+-- prevent "c" from yanking
+keymap.set("n", "c", '"_c')
 
 -- increment number
 keymap.set("n", "<leader>+", "<C-a>")
