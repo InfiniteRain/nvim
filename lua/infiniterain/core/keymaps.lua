@@ -52,7 +52,7 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- neo-tree
-keymap.set("n", "<leader>e", ":Neotree toggle<cr>")
+keymap.set("n", "<leader>e", ":Neotree reveal toggle<cr>")
 
 -- telescope
 keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files({ path_display = { 'truncate' } })<cr>")
