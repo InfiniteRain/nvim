@@ -37,6 +37,9 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
+-- scrolloff
+opt.scrolloff = 10
+
 -- auto-reload files when modified externally
 -- https://unix.stackexchange.com/a/383044
 opt.autoread = true
