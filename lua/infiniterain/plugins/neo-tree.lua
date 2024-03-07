@@ -21,6 +21,7 @@ require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
 				},
 			},
 			window = {
+				position = "float",
 				mappings = {
 					["z"] = "none",
 				},
