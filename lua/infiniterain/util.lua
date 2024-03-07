@@ -77,8 +77,17 @@ local function safe_vim_cmd(cmd, error_callback)
 	end
 end
 
+local execute_win_command = function(winid, cmd)
+	if vim.api.nvim_get_current_win() == winid then
+		vim.cmd(cmd)
+	else
+		vim.cmd("call win_execute(" .. winid .. [[, "]] .. cmd .. [[")]])
+	end
+end
+
 return {
 	recursive_require = recursive_require,
 	safe_require = safe_require,
 	safe_vim_cmd = safe_vim_cmd,
+	execute_win_command = execute_win_command,
 }

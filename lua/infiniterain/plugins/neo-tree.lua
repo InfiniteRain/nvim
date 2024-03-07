@@ -1,5 +1,15 @@
 require("infiniterain.util").safe_require("neo-tree", function(neo_tree)
+	local execute_win_command = require("infiniterain.util").execute_win_command
+
 	neo_tree.setup({
+		event_handlers = {
+			{
+				event = "neo_tree_window_after_open",
+				handler = function(state)
+					execute_win_command(state.winid, "setlocal scrolloff=10000")
+				end,
+			},
+		},
 		sources = { "filesystem", "buffers", "git_status", "document_symbols" },
 		default_component_configs = {
 			indent = {
