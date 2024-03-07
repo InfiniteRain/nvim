@@ -19,6 +19,9 @@ keymap.set("n", "x", '"_x')
 -- prevent "c" from yanking
 keymap.set("n", "c", '"_c')
 
+-- prevent "p" from yanking
+keymap.set("x", "p", "P")
+
 -- increment number
 keymap.set("n", "<leader>+", "<C-a>")
 
