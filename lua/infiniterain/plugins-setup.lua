@@ -121,6 +121,9 @@ return packer.startup(function(use)
 	-- monorepo
 	use("imNel/monorepo.nvim")
 
+	-- wordmotion
+	use("chaoren/vim-wordmotion")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
