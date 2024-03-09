@@ -17,6 +17,7 @@ require("infiniterain.util").safe_require(
 				"denols",
 				"ocamllsp",
 				"omnisharp",
+				"zls",
 			},
 		})
 
@@ -29,6 +30,7 @@ require("infiniterain.util").safe_require(
 				"ocamlformat",
 				"csharpier",
 				"gdtoolkit",
+				"zigfmt",
 			},
 		})
 	end
