@@ -1,8 +1,13 @@
-require("infiniterain.util").safe_require(
-	"lspconfig",
-	"cmp_nvim_lsp",
-	"typescript",
-	function(lspconfig, cmp_nvim_lsp, typescript)
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local lspconfig = require("lspconfig")
+		local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
 		local keymap = vim.keymap
 
 		local on_attach = function(client, bufnr)
@@ -47,7 +52,7 @@ require("infiniterain.util").safe_require(
 			on_attach = on_attach,
 		})
 
-		typescript.setup({
+		lspconfig["tsserver"].setup({
 			server = {
 				capabilities = capabilities,
 				on_attach = on_attach,
@@ -118,21 +123,6 @@ require("infiniterain.util").safe_require(
 			root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 		})
 
-		lspconfig["ocamllsp"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			cmd = { "ocamllsp" },
-			filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-			root_dir = lspconfig.util.root_pattern(
-				"*.opam",
-				"esy.json",
-				"package.json",
-				".git",
-				"dune-project",
-				"dune-workspace"
-			),
-		})
-
 		lspconfig["omnisharp"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -158,5 +148,5 @@ require("infiniterain.util").safe_require(
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-	end
-)
+	end,
+}

@@ -1,8 +1,15 @@
-require("infiniterain.util").safe_require(
-	"mason",
-	"mason-lspconfig",
-	"mason-null-ls",
-	function(mason, mason_lspconfig, mason_null_ls)
+return {
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"jay-babu/mason-null-ls.nvim",
+		"jose-elias-alvarez/null-ls.nvim",
+	},
+	config = function()
+		local mason = require("mason")
+		local mason_lspconfig = require("mason-lspconfig")
+		local mason_null_ls = require("mason-null-ls")
+
 		mason.setup()
 
 		mason_lspconfig.setup({
@@ -15,7 +22,6 @@ require("infiniterain.util").safe_require(
 				"emmet_ls",
 				"rust_analyzer",
 				"denols",
-				"ocamllsp",
 				"omnisharp",
 				"zls",
 			},
@@ -27,11 +33,10 @@ require("infiniterain.util").safe_require(
 				"stylua",
 				"eslint_d",
 				"rustfmt",
-				"ocamlformat",
 				"csharpier",
 				"gdtoolkit",
 				"zigfmt",
 			},
 		})
-	end
-)
+	end,
+}

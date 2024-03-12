@@ -1,10 +1,15 @@
-require("infiniterain.util").safe_require(
-	"ts_context_commentstring",
-	"mini.comment",
-	function(comment_string, mini_comment)
-		comment_string.setup({
+return {
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	dependencies = { "echasnovski/mini.comment" },
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local ts_context_commentstring = require("ts_context_commentstring")
+		local mini_comment = require("mini.comment")
+
+		ts_context_commentstring.setup({
 			enable_autocmd = false,
 		})
+
 		mini_comment.setup({
 			options = {
 				custom_commentstring = function()
@@ -13,5 +18,5 @@ require("infiniterain.util").safe_require(
 				end,
 			},
 		})
-	end
-)
+	end,
+}

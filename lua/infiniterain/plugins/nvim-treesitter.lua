@@ -1,33 +1,45 @@
-require("infiniterain.util").safe_require("nvim-treesitter.configs", "treesitter-context", function(treesitter, context)
-	treesitter.setup({
-		highlight = {
-			enable = true,
-		},
-		indent = { enable = true },
-		autotag = { enable = true },
-		ensure_installed = {
-			"json",
-			"javascript",
-			"typescript",
-			"tsx",
-			"yaml",
-			"html",
-			"css",
-			"markdown",
-			"svelte",
-			"graphql",
-			"bash",
-			"lua",
-			"vim",
-			"dockerfile",
-			"gitignore",
-			"markdown",
-			"markdown_inline",
-		},
-		auto_install = true,
-	})
+return {
+	"nvim-treesitter/nvim-treesitter",
+	dependencies = {
+		"windwp/nvim-ts-autotag",
+		"nvim-treesitter/nvim-treesitter-context",
+	},
+	event = { "BufReadPre", "BufNewFile" },
+	build = ":TSUpdate",
+	config = function()
+		local treesitter = require("nvim-treesitter.configs")
+		local context = require("treesitter-context")
 
-	context.setup({})
+		treesitter.setup({
+			highlight = {
+				enable = true,
+			},
+			indent = { enable = true },
+			autotag = { enable = true },
+			ensure_installed = {
+				"json",
+				"javascript",
+				"typescript",
+				"tsx",
+				"yaml",
+				"html",
+				"css",
+				"markdown",
+				"svelte",
+				"graphql",
+				"bash",
+				"lua",
+				"vim",
+				"dockerfile",
+				"gitignore",
+				"markdown",
+				"markdown_inline",
+			},
+			auto_install = true,
+		})
 
-	vim.cmd("highlight TreesitterContext guibg=#434c5e")
-end)
+		context.setup({})
+
+		vim.cmd("highlight TreesitterContext guibg=#434c5e")
+	end,
+}

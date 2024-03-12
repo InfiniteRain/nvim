@@ -1,3 +1,8 @@
-require("infiniterain.util").safe_require("harpoon", function(harpoon)
-	harpoon:setup()
-end)
+return {
+	"ThePrimeagen/harpoon",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	branch = "harpoon2",
+	config = true,
+}
