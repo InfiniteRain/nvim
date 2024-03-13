@@ -71,6 +71,12 @@ return {
 
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		local border = "double"
+		local handlers = {
+			["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+			["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+		}
+
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
@@ -80,12 +86,14 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		lspconfig["tsserver"].setup({
 			server = {
 				capabilities = capabilities,
 				on_attach = on_attach,
+				handlers = handlers,
 				root_dir = lspconfig.util.root_pattern("package.json"),
 				single_file_support = false,
 			},
@@ -94,22 +102,26 @@ return {
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			settings = {
 				Lua = {
 					-- make the language server recognize "vim" global
@@ -130,6 +142,7 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			settings = {
 				["rust-analyzer"] = {
 					checkOnSave = {
@@ -150,6 +163,7 @@ return {
 		lspconfig["denols"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 			root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 		})
 
@@ -159,6 +173,8 @@ return {
 			cmd = { vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp" },
 			handlers = {
 				["textDocument/definition"] = require("omnisharp_extended").handler,
+				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 			},
 			enable_editorconfig_support = true,
 			enable_ms_build_load_projects_on_demand = false,
@@ -172,11 +188,13 @@ return {
 		lspconfig["gdscript"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 
 		lspconfig["zls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			handlers = handlers,
 		})
 	end,
 }

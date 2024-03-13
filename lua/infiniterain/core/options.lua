@@ -63,6 +63,7 @@ opt.colorcolumn = "80"
 -- sort diagnostics by severity (errors will appear first)
 vim.diagnostic.config({
 	severity_sort = true,
+	float = { border = "double" },
 })
 
 -- appropriately highlight codefences returned from denols
