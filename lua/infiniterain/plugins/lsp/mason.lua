@@ -2,13 +2,12 @@ return {
 	"williamboman/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-		"jay-babu/mason-null-ls.nvim",
-		"jose-elias-alvarez/null-ls.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
-		local mason_null_ls = require("mason-null-ls")
+		local mason_tool_installer = require("mason-tool-installer")
 
 		mason.setup()
 
@@ -27,15 +26,13 @@ return {
 			},
 		})
 
-		mason_null_ls.setup({
+		mason_tool_installer.setup({
 			ensure_installed = {
 				"prettier",
 				"stylua",
 				"eslint_d",
-				"rustfmt",
 				"csharpier",
 				"gdtoolkit",
-				"zigfmt",
 			},
 		})
 	end,
