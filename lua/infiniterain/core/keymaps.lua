@@ -54,12 +54,6 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 -- neo-tree
 keymap.set("n", "<leader>e", ":Neotree reveal toggle<cr>")
 
--- telescope
-keymap.set("n", "<leader>ff", ":lua require('telescope.builtin').find_files({ path_display = { 'truncate' } })<cr>")
-keymap.set("n", "<leader>fs", ":lua require('telescope.builtin').live_grep({ path_display = { 'truncate' } })<cr>")
-keymap.set("n", "<leader>fc", ":lua require('telescope.builtin').grep_string({ path_display = { 'truncate' } })<cr>")
-keymap.set("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles({ path_display = { 'truncate' } })<cr>")
-
 -- lazygit
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 

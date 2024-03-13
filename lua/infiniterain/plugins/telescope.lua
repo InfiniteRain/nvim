@@ -39,5 +39,28 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("monorepo")
+
+		local keymap = vim.keymap
+
+		keymap.set(
+			"n",
+			"<leader>ff",
+			":lua require('telescope.builtin').find_files({ path_display = { 'truncate' } })<cr>"
+		)
+		keymap.set(
+			"n",
+			"<leader>fs",
+			":lua require('telescope.builtin').live_grep({ path_display = { 'truncate' } })<cr>"
+		)
+		keymap.set(
+			"n",
+			"<leader>fc",
+			":lua require('telescope.builtin').grep_string({ path_display = { 'truncate' } })<cr>"
+		)
+		keymap.set(
+			"n",
+			"<leader>fr",
+			":lua require('telescope.builtin').oldfiles({ path_display = { 'truncate' } })<cr>"
+		)
 	end,
 }
