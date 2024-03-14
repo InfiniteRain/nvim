@@ -22,19 +22,12 @@ return {
 				csharp = { "csharpier" },
 				gdscript = { "gdformat" },
 			},
-			format_on_save = function()
-				local errors = vim.diagnostic.get(0, { severity = { min = vim.diagnostic.severity.ERROR } })
-
-				if #errors > 0 then
-					return
-				end
-
-				return {
-					lsp_fallback = true,
-					async = false,
-					timeout_ms = 1000,
-				}
-			end,
+			format_on_save = {
+				lsp_fallback = true,
+				async = false,
+				timeout_ms = 1000,
+				quiet = true,
+			},
 		})
 	end,
 }
