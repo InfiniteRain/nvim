@@ -9,6 +9,11 @@ return {
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
+		vim.cmd("highlight DiagnosticVirtualTextError guifg=#db4b4b gui=bold,italic,underline")
+		vim.cmd("highlight DiagnosticVirtualTextWarning guifg=#e0af68 gui=bold,italic,underline")
+		vim.cmd("highlight DiagnosticVirtualTextInformation guifg=#0db9d7 gui=bold,italic,underline")
+		vim.cmd("highlight DiagnosticVirtualTextHint guifg=#10B981 gui=bold,italic,underline")
+
 		local keymap = vim.keymap
 
 		local opts = { noremap = true, silent = true }
