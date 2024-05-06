@@ -9,6 +9,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
+		local builtin = require("telescope.builtin")
 
 		telescope.setup({
 			defaults = {
@@ -16,6 +17,8 @@ return {
 					i = {
 						["<C-k>"] = actions.move_selection_previous,
 						["<C-j>"] = actions.move_selection_next,
+						["<C-l>"] = actions.cycle_history_next,
+						["<C-h>"] = actions.cycle_history_prev,
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
@@ -41,26 +44,25 @@ return {
 		telescope.load_extension("monorepo")
 
 		local keymap = vim.keymap
+		local builtin_config = { path_display = { "truncate" } }
 
-		keymap.set(
-			"n",
-			"<leader>ff",
-			":lua require('telescope.builtin').find_files({ path_display = { 'truncate' } })<cr>"
-		)
-		keymap.set(
-			"n",
-			"<leader>fs",
-			":lua require('telescope.builtin').live_grep({ path_display = { 'truncate' } })<cr>"
-		)
-		keymap.set(
-			"n",
-			"<leader>fc",
-			":lua require('telescope.builtin').grep_string({ path_display = { 'truncate' } })<cr>"
-		)
-		keymap.set(
-			"n",
-			"<leader>fr",
-			":lua require('telescope.builtin').oldfiles({ path_display = { 'truncate' } })<cr>"
-		)
+		keymap.set("n", "<leader>ff", function()
+			builtin.find_files(builtin_config)
+		end)
+		keymap.set("n", "<leader>fs", function()
+			builtin.live_grep(builtin_config)
+		end)
+		keymap.set("n", "<leader>fc", function()
+			builtin.grep_string(builtin_config)
+		end)
+		keymap.set("n", "<leader>fr", function()
+			builtin.oldfiles(builtin_config)
+		end)
+		keymap.set("n", "<leader>fd", function()
+			builtin.lsp_document_symbols()
+		end)
+		keymap.set("n", "<leader>fw", function()
+			builtin.lsp_workspace_symbols()
+		end)
 	end,
 }
