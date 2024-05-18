@@ -2,6 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	dependencies = {
 		"windwp/nvim-ts-autotag",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 		"nvim-treesitter/nvim-treesitter-context",
 	},
 	event = { "BufReadPre", "BufNewFile" },
@@ -34,8 +35,18 @@ return {
 				"gitignore",
 				"markdown",
 				"markdown_inline",
+				"zig",
 			},
 			auto_install = true,
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<C-s>",
+					node_incremental = "<C-s>",
+					scope_incremental = false,
+					node_decremental = "<bs>",
+				},
+			},
 		})
 
 		context.setup({
