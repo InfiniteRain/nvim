@@ -38,7 +38,11 @@ return {
 			auto_install = true,
 		})
 
-		context.setup({})
+		context.setup({
+			max_lines = 5,
+			trim_scope = "inner",
+			multiline_threshold = 1,
+		})
 
 		vim.cmd("highlight TreesitterContext guibg=#434c5e")
 	end,
