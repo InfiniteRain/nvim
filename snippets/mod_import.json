@@ -1,0 +1,6 @@
+{
+  "local module import": {
+    "prefix": "importmod",
+    "body": ["const $0_mod = @import(\"$0.zig\");"]
+  }
+}

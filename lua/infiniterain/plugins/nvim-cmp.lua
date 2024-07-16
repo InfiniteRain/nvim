@@ -15,6 +15,9 @@ return {
 		local lspkind = require("lspkind")
 
 		require("luasnip/loaders/from_vscode").lazy_load()
+		require("luasnip/loaders/from_vscode").lazy_load({
+			paths = vim.fn.stdpath("config") .. "/snippets/",
+		})
 
 		vim.keymap.set({ "i", "s" }, "<C-l>", function()
 			luasnip.jump(1)

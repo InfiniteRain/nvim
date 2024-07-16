@@ -198,6 +198,9 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
+			settings = {
+				enable_autofix = true,
+			},
 		})
 	end,
 }
