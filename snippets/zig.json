@@ -1,0 +1,18 @@
+{
+  "Self alias": {
+    "prefix": "Self",
+    "body": ["const Self = @This();"]
+  },
+  "native module import": {
+    "prefix": "inat",
+    "body": ["const $0 = @import(\"$0\");"]
+  },
+  "local module import": {
+    "prefix": "imod",
+    "body": ["const $0_mod = @import(\"$0.zig\");"]
+  },
+  "enum declaration": {
+    "prefix": "enumd",
+    "body": ["const ${1:name} = enum {$2};"]
+  }
+}
