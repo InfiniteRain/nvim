@@ -57,6 +57,14 @@ vim.cmd([[
   autocmd FocusLost,BufEnter * nested silent! wall
 ]])
 
+-- highlight on yank
+vim.cmd([[
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+  augroup END
+]])
+
 -- color column
 opt.colorcolumn = "80"
 
