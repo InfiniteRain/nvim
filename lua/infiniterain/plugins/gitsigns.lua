@@ -13,7 +13,7 @@ return {
 				changedelete = { text = "▎" },
 				untracked = { text = "▎" },
 			},
-			_signs_staged_enable = true,
+			signs_staged_enable = true,
 		})
 	end,
 }

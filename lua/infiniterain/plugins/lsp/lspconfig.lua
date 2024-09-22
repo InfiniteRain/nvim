@@ -94,7 +94,7 @@ return {
 			handlers = handlers,
 		})
 
-		lspconfig["tsserver"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
@@ -198,6 +198,15 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
+			settings = {
+				enable_autofix = true,
+				enable_build_on_save = true,
+				build_on_save_step = "check",
+				warn_style = true,
+			},
 		})
+
+		-- disable the annoying popup each time an error occurs
+		vim.g.zig_fmt_parse_errors = 0
 	end,
 }
