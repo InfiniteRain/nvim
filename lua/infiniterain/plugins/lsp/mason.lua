@@ -23,6 +23,7 @@ return {
 				"denols",
 				"omnisharp",
 				"zls",
+				"pyright",
 			},
 
 			automatic_installation = true,
@@ -35,6 +36,7 @@ return {
 				"eslint_d",
 				"csharpier",
 				"gdtoolkit",
+				"black",
 			},
 		})
 	end,

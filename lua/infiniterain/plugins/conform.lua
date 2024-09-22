@@ -21,6 +21,7 @@ return {
 				rust = { "rustfmt" },
 				csharp = { "csharpier" },
 				gdscript = { "gdformat" },
+				python = { "black" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
