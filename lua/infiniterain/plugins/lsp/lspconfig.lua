@@ -206,6 +206,19 @@ return {
 			},
 		})
 
+		lspconfig["svelte"].setup({
+			capabilities = capabilities,
+			on_attach = function(client, bufnr)
+				vim.api.nvim_create_autocmd("BufWritePost", {
+					pattern = { "*.js", "*.ts" },
+					callback = function(ctx)
+						client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
+					end,
+				})
+				on_attach(client, bufnr)
+			end,
+		})
+
 		-- disable the annoying popup each time an error occurs
 		vim.g.zig_fmt_parse_errors = 0
 

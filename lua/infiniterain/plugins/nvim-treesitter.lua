@@ -11,11 +11,21 @@ return {
 		local treesitter = require("nvim-treesitter.configs")
 		local context = require("treesitter-context")
 
+		vim.filetype.add({
+			extension = {
+				rs2 = "runescript",
+				cs2 = "clientscript",
+			},
+		})
+
 		treesitter.setup({
 			highlight = {
 				enable = true,
 			},
-			indent = { enable = true },
+			indent = {
+				enable = true,
+				disable = { "zig" },
+			},
 			autotag = { enable = true },
 			ensure_installed = {
 				"json",

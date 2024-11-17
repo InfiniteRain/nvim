@@ -24,6 +24,7 @@ return {
 				"omnisharp",
 				"zls",
 				"pyright",
+				"svelte",
 			},
 
 			automatic_installation = true,
