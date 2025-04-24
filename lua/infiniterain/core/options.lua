@@ -81,3 +81,6 @@ vim.g.markdown_fenced_languages = {
 
 -- C# tab size
 vim.cmd([[autocmd Filetype cs setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
+
+-- Elm tab size
+vim.cmd([[autocmd Filetype elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])

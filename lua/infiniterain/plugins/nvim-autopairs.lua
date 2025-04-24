@@ -14,6 +14,7 @@ return {
 				javascript = { "template_string" },
 				java = false,
 			},
+			disable_filetype = { "elm" },
 		})
 
 		local cmp_autopairs_setup, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")

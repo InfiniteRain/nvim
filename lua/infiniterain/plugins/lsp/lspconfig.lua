@@ -21,7 +21,7 @@ return {
 			opts.buffer = bufnr
 
 			opts.desc = "Show LSP references"
-			keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
+			keymap.set("n", "gu", "<cmd>Telescope lsp_references<CR>", opts)
 
 			opts.desc = "Go to declaration"
 			keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
@@ -192,6 +192,25 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			handlers = handlers,
+		})
+
+		lspconfig["elmls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			handlers = {
+				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+				["window/showMessageRequest"] = function(whatever, result)
+					-- For some reason, the showMessageRequest handler doesn't work with
+					-- the format failed error. It just hangs on the screen and can't
+					-- interact with the vim.ui.select thingy. So skip it.
+					if result.message:find("Running elm-format failed", 1, true) then
+						print(result.message)
+						return vim.NIL
+					end
+					return vim.lsp.handlers["window/showMessageRequest"](whatever, result)
+				end,
+			},
 		})
 
 		lspconfig["zls"].setup({
