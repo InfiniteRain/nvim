@@ -84,3 +84,6 @@ vim.cmd([[autocmd Filetype cs setlocal expandtab tabstop=4 shiftwidth=4 softtabs
 
 -- Elm tab size
 vim.cmd([[autocmd Filetype elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4]])
+
+-- double boder for all floating windows
+vim.opt.winborder = "double"
