@@ -95,8 +95,6 @@ return {
 			end,
 		})
 
-		local capabilities = cmp_nvim_lsp.default_capabilities()
-
 		vim.diagnostic.config({
 			signs = {
 				text = {
@@ -179,10 +177,21 @@ return {
 			},
 		})
 
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			callback = function()
+				if vim.bo.ft == "zig" then
+					vim.lsp.buf.code_action({
+						context = { only = { "source.fixAll" } },
+						apply = true,
+					})
+				end
+			end,
+		})
+
 		-- disable the annoying popup each time an error occurs
 		vim.g.zig_fmt_parse_errors = 0
 		-- disable fmt on save
-		vim.g.zig_fmt_autosave = 1
+		vim.g.zig_fmt_autosave = 0
 
 		-- lspconfig["svelte"].setup({
 		-- 	capabilities = capabilities,
