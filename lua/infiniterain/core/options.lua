@@ -49,12 +49,9 @@ vim.cmd([[
     \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 ]])
 
--- go back into insert mode on lost focus
-vim.cmd('autocmd FocusLost * call feedkeys("\\<esc>")')
-
 -- save on focus lost & buf enter
 vim.cmd([[
-  autocmd FocusLost,BufEnter * nested silent! wall
+  autocmd FocusLost,BufEnter * nested if mode() != 'i' | silent! wall | endif
 ]])
 
 -- highlight on yank
