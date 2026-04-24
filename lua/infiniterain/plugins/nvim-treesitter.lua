@@ -8,7 +8,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
+		local treesitter = require("nvim-treesitter.config")
 		local context = require("treesitter-context")
 
 		vim.filetype.add({
