@@ -25,6 +25,7 @@ return {
 				"zls",
 				"pyright",
 				"svelte",
+				"gopls",
 			},
 
 			automatic_installation = true,

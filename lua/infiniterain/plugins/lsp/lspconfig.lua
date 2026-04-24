@@ -118,6 +118,8 @@ return {
 
 		vim.lsp.enable({ "rust_analyzer" })
 
+		vim.lsp.enable({ "gopls" })
+
 		vim.lsp.config("zls", {
 			settings = {
 				zls = {
@@ -139,7 +141,7 @@ return {
 		})
 
 		-- disable the annoying popup each time an error occurs
-		vim.g.zig_fmt_parse_errors = 0
+		vim.g.zig_fmt_parse_errors = 1
 		-- disable fmt on save
 		vim.g.zig_fmt_autosave = 0
 
