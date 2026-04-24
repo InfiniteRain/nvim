@@ -118,56 +118,6 @@ return {
 
 		vim.lsp.enable({ "rust_analyzer" })
 
-		-- lspconfig["denols"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	handlers = handlers,
-		-- 	root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-		-- })
-		--
-		-- lspconfig["omnisharp"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	cmd = { vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp" },
-		-- 	handlers = {
-		-- 		["textDocument/definition"] = require("omnisharp_extended").handler,
-		-- 		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-		-- 		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-		-- 	},
-		-- 	enable_editorconfig_support = true,
-		-- 	enable_ms_build_load_projects_on_demand = false,
-		-- 	enable_roslyn_analyzers = true,
-		-- 	organize_imports_on_format = true,
-		-- 	enable_import_completion = true,
-		-- 	sdk_include_prereleases = true,
-		-- 	analyze_open_documents_only = true,
-		-- })
-		--
-		-- lspconfig["gdscript"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	handlers = handlers,
-		-- })
-
-		-- lspconfig["elmls"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	handlers = {
-		-- 		["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
-		-- 		["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
-		-- 		["window/showMessageRequest"] = function(whatever, result)
-		-- 			-- For some reason, the showMessageRequest handler doesn't work with
-		-- 			-- the format failed error. It just hangs on the screen and can't
-		-- 			-- interact with the vim.ui.select thingy. So skip it.
-		-- 			if result.message:find("Running elm-format failed", 1, true) then
-		-- 				print(result.message)
-		-- 				return vim.NIL
-		-- 			end
-		-- 			return vim.lsp.handlers["window/showMessageRequest"](whatever, result)
-		-- 		end,
-		-- 	},
-		-- })
-
 		vim.lsp.config("zls", {
 			settings = {
 				zls = {
@@ -192,34 +142,6 @@ return {
 		vim.g.zig_fmt_parse_errors = 0
 		-- disable fmt on save
 		vim.g.zig_fmt_autosave = 0
-
-		-- lspconfig["svelte"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = function(client, bufnr)
-		-- 		vim.api.nvim_create_autocmd("BufWritePost", {
-		-- 			pattern = { "*.js", "*.ts" },
-		-- 			callback = function(ctx)
-		-- 				client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-		-- 			end,
-		-- 		})
-		-- 		on_attach(client, bufnr)
-		-- 	end,
-		-- })
-		--
-		-- lspconfig["pyright"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	handlers = handlers,
-		-- 	before_init = function(_, config)
-		-- 		local Path = require("plenary.path")
-		-- 		local venv = Path:new((config.root_dir:gsub("/", Path.path.sep)), ".venv")
-		-- 		if venv:joinpath("bin"):is_dir() then
-		-- 			config.settings.python.pythonPath = tostring(venv:joinpath("bin", "python"))
-		-- 		else
-		-- 			config.settings.python.pythonPath = tostring(venv:joinpath("Scripts", "python.exe"))
-		-- 		end
-		-- 	end,
-		-- })
 
 		vim.lsp.config("emmylua_ls", {
 			settings = {
