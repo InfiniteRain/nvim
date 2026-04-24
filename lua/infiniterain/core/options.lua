@@ -65,6 +65,8 @@ vim.cmd([[
 -- color column
 opt.colorcolumn = "80"
 
+vim.cmd([[autocmd Filetype zig setlocal colorcolumn=100]])
+
 -- sort diagnostics by severity (errors will appear first)
 vim.diagnostic.config({
 	severity_sort = true,
