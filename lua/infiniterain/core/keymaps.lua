@@ -44,6 +44,15 @@ keymap.set("n", "<leader>sx", ":close<CR>")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- incremental selection
+keymap.set("n", "<C-s>", ":normal van<CR>")
+keymap.set("v", "<C-s>", function()
+	vim.api.nvim_feedkeys("an", "v", false)
+end)
+keymap.set("v", "<bs>", function()
+	vim.api.nvim_feedkeys("in", "v", false)
+end)
+
 ---
 -- Plugin keymaps
 ---

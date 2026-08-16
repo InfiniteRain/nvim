@@ -8,7 +8,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	config = function()
-		local treesitter = require("nvim-treesitter.config")
+		local treesitter = require("nvim-treesitter")
 		local context = require("treesitter-context")
 
 		vim.filetype.add({
@@ -18,46 +18,34 @@ return {
 			},
 		})
 
-		treesitter.setup({
-			highlight = {
-				enable = true,
-			},
-			indent = {
-				enable = true,
-				disable = { "zig" },
-			},
-			autotag = { enable = true },
-			ensure_installed = {
-				"json",
-				"javascript",
-				"typescript",
-				"tsx",
-				"yaml",
-				"html",
-				"css",
-				"markdown",
-				"svelte",
-				"graphql",
-				"bash",
-				"lua",
-				"vim",
-				"dockerfile",
-				"gitignore",
-				"markdown",
-				"markdown_inline",
-				"zig",
-			},
-			auto_install = true,
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<C-s>",
-					node_incremental = "<C-s>",
-					scope_incremental = false,
-					node_decremental = "<bs>",
-				},
-			},
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "LazyDone",
+			once = true,
+			callback = function()
+				treesitter.install({
+					"json",
+					"javascript",
+					"typescript",
+					"tsx",
+					"yaml",
+					"html",
+					"css",
+					"markdown",
+					"svelte",
+					"graphql",
+					"bash",
+					"lua",
+					"vim",
+					"dockerfile",
+					"gitignore",
+					"markdown",
+					"markdown_inline",
+					"zig",
+				}, { max_jobs = 8 })
+			end,
 		})
+
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
 		context.setup({
 			max_lines = 5,
